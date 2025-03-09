@@ -1,0 +1,88 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Mobile-specific styles */
+.mobile-card {
+  @apply rounded-xl shadow-md border-0 bg-white dark:bg-gray-800 overflow-hidden;
+  transition: transform 0.2s ease;
+}
+
+.mobile-input {
+  @apply rounded-full bg-muted border-0 focus:ring-2 focus:ring-primary px-4 py-3;
+}
+
+.mobile-button {
+  @apply rounded-full font-medium text-sm px-5 py-2.5;
+}
+
+.mobile-header {
+  @apply rounded-b-xl shadow-md bg-gradient-to-r from-primary to-primary/90;
+}
+
+/* Add touch feedback on mobile */
+@media (pointer: coarse) {
+  .touch-highlight:active {
+    @apply bg-gray-100 dark:bg-gray-700 transition-colors duration-200;
+  }
+  
+  .touch-scale:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease-in-out;
+  }
+}
+
+/* Mobile animations */
+.slide-up-mobile {
+  animation: slideUpMobile 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes slideUpMobile {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
